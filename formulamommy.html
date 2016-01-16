@@ -1,14 +1,73 @@
 <head>
-  <title>formulamommy</title>
+  <meta charset="UTF-8">
+  <title>Meteor Blog Example</title>
+  <link rel="alternate" type="application/rss+xml" title="Example Blog App" href="/rss/posts">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
-  <h1>Welcome to Meteor!</h1>
+<template name="layout">
+  {{> header}}
+  <main>
+    {{>Template.dynamic template=content data=params}}
+  </main>
+  <hr>
+  {{> footer}}
+</template>
 
-  {{> hello}}
-</body>
+<template name="blog">
+  <div class="container">
+    {{> blogIndex}}
+  </div>
+</template>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="footer">
+  <footer>
+    <div class="container">
+      <p>
+        A <a href="http://differential.com/">Differential</a> Open-Source
+        <a href="http://differential.com/services/meteor">Meteor</a> project
+      </p>
+    </div>
+  </footer>
+</template>
+
+<template name="header">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">Meteor Blog Example</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a href="{{blogPathFor "blogIndex"}}">Blog</a>
+          </li>
+          <li>
+            <a href="{{blogPathFor "blogAdmin"}}">Admin Area (must login)</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {{> loginButtons}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="home">
+  <div class="container">
+    <p class="lead">
+      This is an example project using the
+      <a href="https://github.com/Differential/meteor-blog">Meteor Blog</a> package.
+    </p>
+    <p>
+      {{> blogLatest num=5}}
+    </p>
+  </div>
+</template>
+
+<template name="show">
+  <div class="container">
+    {{> blogShow}}
+  </div>
 </template>
