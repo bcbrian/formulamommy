@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<template name="layout">
-  {{> header}}
+<template name="blogLayout">
+  {{> blogHeader}}
   <main>
     {{>Template.dynamic template=content data=params}}
   </main>
   <hr>
-  {{> footer}}
+  {{> blogFooter}}
 </template>
 
 <template name="blog">
@@ -20,7 +20,7 @@
   </div>
 </template>
 
-<template name="footer">
+<template name="blogFooter">
   <footer>
     <div class="container">
       <p>
@@ -31,7 +31,7 @@
   </footer>
 </template>
 
-<template name="header">
+<template name="blogHeader">
   <div class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -54,7 +54,7 @@
   </div>
 </template>
 
-<template name="home">
+<template name="blogHome">
   <div class="container">
     <p class="lead">
       This is an example project using the

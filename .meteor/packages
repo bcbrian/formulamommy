@@ -22,3 +22,6 @@ accounts-ui
 accounts-password
 twbs:bootstrap
 bcbrian:react-blog
+fm-core
+fm-app
+fm-blog

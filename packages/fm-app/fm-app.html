@@ -1,0 +1,67 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Meteor Blog Example</title>
+  <link rel="alternate" type="application/rss+xml" title="Example Blog App" href="/rss/posts">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+
+
+
+<template name="appFooter">
+  <footer>
+    <div class="container">
+      <p>
+        A <a href="http://differential.com/">Differential</a> Open-Source
+        <a href="http://differential.com/services/meteor">Meteor</a> project
+      </p>
+    </div>
+  </footer>
+</template>
+
+<template name="appHeader">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">Meteor Blog Example</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a href="{{blogPathFor "blogIndex"}}">Blog</a>
+          </li>
+          <li>
+            <a href="{{blogPathFor "blogAdmin"}}">Admin Area (must login)</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {{> loginButtons}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="appHome">
+  <div class="container">
+    <p>
+      Log in! WTF!!!!!
+    </p>
+  </div>
+</template>
+
+<template name="showBlog">
+  <div class="container">
+    {{> blogShow}}
+  </div>
+</template>
+
+<template name="appLayout">
+  {{> appHeader}}
+  <main>
+    {{>Template.dynamic template=content data=params}}
+  </main>
+  <hr>
+  {{> appFooter}}
+</template>
