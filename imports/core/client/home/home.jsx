@@ -15,12 +15,13 @@ export class Home extends Component {
 
 
                   return (
-
-                    <div className="card card-block">
-                      <h4 className="card-title">{post.title}</h4>
-                      <p className="card-text">{post.description}</p>
-                      <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
+                    <a key={post._id} href={"/view-post/"+post._id+"/"+post.title.toLowerCase().replace(' ', '-')}>
+                      <div className="card card-block">
+                        <h4 className="card-title">{post.title}</h4>
+                        <p className="card-text">{post.description}</p>
+                        <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </a>
 
                   );
                 })}
@@ -30,12 +31,13 @@ export class Home extends Component {
 
 
                   return (
-
-                    <div className="card card-block">
-                      <h4 className="card-title">{post.title}</h4>
-                      <p className="card-text">{post.description}</p>
-                      <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
+                    <a key={post._id} href={"/view-post/"+post._id+"/"+post.title.toLowerCase().replace(' ', '-')}>
+                      <div className="card card-block">
+                        <h4 className="card-title">{post.title}</h4>
+                        <p className="card-text">{post.description}</p>
+                        <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </a>
 
                   );
                 })}
