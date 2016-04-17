@@ -1,2 +1,6 @@
+mupx.json
 mup.json
-settings.json
+.DS_Store
+node_modules
+Dockerfile
+npm-debug.log
