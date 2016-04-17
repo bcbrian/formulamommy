@@ -21,3 +21,6 @@ accounts-password
 standard-minifier-css
 standard-minifier-js
 react-meteor-data
+
+tmeasday:test-reporter-helpers
+avital:mocha

@@ -7,7 +7,7 @@ import { assert } from 'meteor/practicalmeteor:chai';
 import React, { Component, PropTypes} from 'react';
 import TestUtils from 'react-addons-test-utils';
 
-import SomePage from '../client/some-page.jsx';
+import SomePage from './manage-posts.jsx';
 
 if (Meteor.isClient) {
   describe('SomePage UI', () => {
